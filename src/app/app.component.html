@@ -1,3 +1,22 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="content1" side="start">
+      <div class="sidemenu" >
+
+          <nav id="nav">
+            <ul> 
+              <li><a routerLink="Approved" routerLinkActive="active">
+                  <i class="fa fa-address-card"></i>
+                  Approved</a></li>
+              <li><a routerLink="Decline"  routerLinkActive="active">
+                  <i class="fa fa-image"></i>
+                  Decline</a></li>
+              <li><a (click)="logout()"  routerLinkActive="active">
+                  <i class="fa fa-shapes"></i>
+                  Logout</a></li>
+            
+            </ul>
+          </nav>
+        </div>
+  </ion-menu> 
+  <ion-router-outlet id="content1"></ion-router-outlet>
 </ion-app>

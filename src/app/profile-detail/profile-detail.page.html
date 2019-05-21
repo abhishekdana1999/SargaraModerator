@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home/{{ModeratorName}}"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ProfileDetail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="data | async as user">
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let img of user.BasicDetails.Images;let i = index">
+      <img (click)="showPhoto(img.Url)" style="height: 308px;width: 100%;object-fit: fill" [src]="img.Url" alt="">
+    </ion-slide>
+  </ion-slides>
+  <ion-card-header>
+    <ion-row>
+        <ion-col col-6>
+            <ion-button (click)="approved(user.id)" color="primary">Approved</ion-button>
+        </ion-col>
+        <ion-col col-6>
+            <ion-button (click)="disapproved(user.id)" color="danger">Disapproved</ion-button>
+        </ion-col>
+    </ion-row>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item-divider>
+      <ion-label>
+        Basic Details
+      </ion-label>
+    </ion-item-divider>
+    <ion-card-subtitle>{{user.BasicDetails.Occupation}}</ion-card-subtitle>
+    <ion-card-title>{{user.BasicDetails.Name}}</ion-card-title>
+    Email: {{user.BasicDetails.Email}} <br>
+    Mobile: {{user.BasicDetails.PhoneNumber}} <br>
+    DOB: {{user.BasicDetails.DateOfBirth.seconds*1000 | date}} <br>
+    Address: {{user.BasicDetails.Address}} <br>
+    State: {{user.BasicDetails.State}} <br>
+    District: {{user.BasicDetails.District}} <br>
+    Education: {{user.BasicDetails.Education}} <br>
+
+    <ion-item-divider>
+      <ion-label>
+        Parential Details
+      </ion-label>
+    </ion-item-divider>
+    Father Name: {{user.parentialDetails.FatherName}} <br>
+    Mother Name: {{user.parentialDetails.MotherName}} <br>
+    Father Occupation: {{user.parentialDetails.FatherOccupation}} <br>
+    Mother Occupation: {{user.parentialDetails.MotherOccupation}} <br>
+    Grand Father Name: {{user.parentialDetails.GrandFatherName}} <br>
+    Grand Mother Name: {{user.parentialDetails.GrandMotherName}} <br>
+    <!-- User Gotra: {{user.BasicDetails.Gotra}} <br>
+    Father Gotra: {{user.parentialDetails.Gotra}} <br>
+    Mother Gotra: {{user.parentialDetails.MotherGotra}} <br>
+    GrandMother Gotra: {{user.parentialDetails.GrandMotherGotra}} -->
+
+  </ion-card-content>
+
+
+</ion-content>

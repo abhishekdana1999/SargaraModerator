@@ -9,3 +9,82 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Nunito|Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+.sidemenu{
+    
+    height: 100%;
+  
+    max-width: 100%;
+    
+    background: linear-gradient(to bottom, #7b4397, #dc2430);
+    background-size: cover;
+    background-position: center;
+   
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.8s, opacity 0.8s linear;
+    box-shadow: 5px 0 25px rgba(0,0,0,.24);
+
+    & nav{
+        & ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            & li{
+                padding: 20px 0 20px 0;
+                margin: 25px 0;
+              transition: .8s ease-in-out;
+              &:hover{
+                background-color: rgba(255,255,255,.45);
+
+              }
+
+              & a{
+                text-decoration: none;
+                display: block;
+                color: #fff;
+                margin-left: 50px;
+                text-transform: uppercase;
+                font-family: Varela Round;
+
+
+                & i{
+                    margin: 0 10px;
+                }
+              }
+            }
+        }
+    }
+}
+
+
+
+.header_custom{
+    height: 80px;
+    width: 100%;
+    display: inline-flex;
+    margin-bottom: 10px;
+
+    &_menu{
+        height: 80px;
+        
+
+        & svg{
+            height: 40px;
+    width: 40px;
+    margin: 20px;
+        }
+
+      
+    }
+
+    & label{
+        margin: 25px;
+        font-family: quicksand;
+        font-size: 1.2rem;
+    }
+}

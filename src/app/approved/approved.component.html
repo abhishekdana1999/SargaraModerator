@@ -1,0 +1,41 @@
+<div class="header_custom">
+    <div (click)="openMenu()" class="header_custom_menu">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="200" height="200" viewBox="0 0 192 192"
+        style=" fill:#3b3b3b;">
+        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+          stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+          font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+          <path d="M0,192v-192h192v192z" fill="none"></path>
+          <g fill="#333333">
+            <g id="surface1">
+              <path
+                d="M96,7.68c-48.735,0 -88.32,39.585 -88.32,88.32c0,48.735 39.585,88.32 88.32,88.32c48.735,0 88.32,-39.585 88.32,-88.32c0,-48.735 -39.585,-88.32 -88.32,-88.32zM96,15.36c44.58,0 80.64,36.06 80.64,80.64c0,44.58 -36.06,80.64 -80.64,80.64c-44.58,0 -80.64,-36.06 -80.64,-80.64c0,-44.58 36.06,-80.64 80.64,-80.64zM56.88,69.12c-2.115,0.195 -3.675,2.085 -3.48,4.2c0.195,2.115 2.085,3.675 4.2,3.48h76.8c1.38,0.015 2.67,-0.705 3.375,-1.905c0.69,-1.2 0.69,-2.67 0,-3.87c-0.705,-1.2 -1.995,-1.92 -3.375,-1.905h-76.8c-0.12,0 -0.24,0 -0.36,0c-0.12,0 -0.24,0 -0.36,0zM56.88,92.16c-2.115,0.195 -3.675,2.085 -3.48,4.2c0.195,2.115 2.085,3.675 4.2,3.48h76.8c1.38,0.015 2.67,-0.705 3.375,-1.905c0.69,-1.2 0.69,-2.67 0,-3.87c-0.705,-1.2 -1.995,-1.92 -3.375,-1.905h-76.8c-0.12,0 -0.24,0 -0.36,0c-0.12,0 -0.24,0 -0.36,0zM56.88,115.2c-2.115,0.195 -3.675,2.085 -3.48,4.2c0.195,2.115 2.085,3.675 4.2,3.48h76.8c1.38,0.015 2.67,-0.705 3.375,-1.905c0.69,-1.2 0.69,-2.67 0,-3.87c-0.705,-1.2 -1.995,-1.92 -3.375,-1.905h-76.8c-0.12,0 -0.24,0 -0.36,0c-0.12,0 -0.24,0 -0.36,0z">
+              </path>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <label>Approved</label>
+
+  </div>
+
+  <ion-content *ngIf="data | async as item">
+      <ion-item (click)="profileDetail(user)" *ngFor="let user of item">
+          <ion-avatar slot="start">
+            <img [src]="user.BasicDetails.Images[0].Url">
+          </ion-avatar>
+          <ion-label>
+            <ion-row>
+              <ion-col col-8>
+                <h2>{{user.BasicDetails.Name}}</h2>
+                <h3>{{user.BasicDetails.District}}</h3>
+                <h3>{{user.BasicDetails.City}}</h3>
+              </ion-col>
+              <ion-col col-4>
+                <h4>{{user.Status}}</h4>
+              </ion-col>
+            </ion-row>
+          </ion-label>
+        </ion-item>
+  </ion-content>
