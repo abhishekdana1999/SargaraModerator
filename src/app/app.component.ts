@@ -30,6 +30,18 @@ export class AppComponent {
     this.router.navigate(['Login']);
     this.menuCtrl.toggle();
   }
+
+  Approved()
+  {
+    this.router.navigate(['Approved']);
+    this.menuCtrl.toggle();
+  }
+
+  Decline()
+  {
+    this.router.navigate(['Decline']);
+    this.menuCtrl.toggle();
+  }
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();

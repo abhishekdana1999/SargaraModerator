@@ -14,12 +14,14 @@
     </ion-slide>
   </ion-slides>
   <ion-card-header>
+      <span style="text-align: center;color: red;" color="danger">Already {{user.Status}} by {{user.Moderator}}</span>
     <ion-row>
+       
         <ion-col col-6>
-            <ion-button (click)="approved(user.id)" color="primary">Approved</ion-button>
+            <ion-button [ngClass]="{'hide': user.Status == 'Approved' ||user.Status == 'Decline'}"  (click)="approved(user.id)" color="primary">Approved</ion-button>
         </ion-col>
         <ion-col col-6>
-            <ion-button (click)="disapproved(user.id)" color="danger">Disapproved</ion-button>
+            <ion-button [ngClass]="{'hide': user.Status == 'Approved' ||user.Status == 'Decline'}" (click)="disapproved(user.id)" color="danger">Disapproved</ion-button>
         </ion-col>
     </ion-row>
   </ion-card-header>
